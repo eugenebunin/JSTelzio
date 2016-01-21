@@ -1,4 +1,4 @@
-# JS widget that just display a statistics from Telzio API
+# A JS widget that shows statistics from Telzio API
 
 ## Usage
 	
@@ -15,7 +15,7 @@ Set a date period:
   	var yesterday = new Date(date.setDate(date.getDate()-1)).toISOString().split('T')[0];
 
 	
-	### Fixed usage
+### Fixed usage
 
   	Telzio.Bootstrap.run({
 	    credentials: {key: 'change me', secret: 'change me'},
@@ -23,7 +23,7 @@ Set a date period:
 	    users: users
   	});
 
-  	### Autoupdated usage
+### Autoupdated usage
 
     bootstraper();
 
