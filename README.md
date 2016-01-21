@@ -2,8 +2,6 @@
 
 ## Usage
 	
-	### Fixed usage
-
 First add your sip users with short (sip user) and number attributes:
 	
 	var users = [
@@ -16,7 +14,8 @@ Set a date period:
   	var today = date.toISOString().split('T')[0];
   	var yesterday = new Date(date.setDate(date.getDate()-1)).toISOString().split('T')[0];
 
-Initialize and pass params:
+	
+	### Fixed usage
 
   	Telzio.Bootstrap.run({
 	    credentials: {key: 'change me', secret: 'change me'},
@@ -37,4 +36,4 @@ Initialize and pass params:
       	});
 
       	setTimeout(bootstraper, 10000);
-    }  	
+    }
