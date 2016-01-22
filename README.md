@@ -22,8 +22,9 @@ Add users with short (sip user) and number attributes:
 Set a date period:
 
 	var date = new Date();
-	
+	// From yesterday
 	options.dateFrom = new Date(date.setDate(date.getDate()-1)).toISOString().split('T')[0];
+	// Till today
   	options.dateTo = date.toISOString().split('T')[0];
 
 Set API credentials:
