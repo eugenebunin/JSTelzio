@@ -40,5 +40,5 @@ Set API credentials:
     
 	function bootstraper() {
 		Telzio.Bootstrap.run(options);
-	      	setTimeout(bootstraper, 10000);
+		setTimeout(bootstraper, 10000);
 	}
