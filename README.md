@@ -1,39 +1,44 @@
-# A JS widget that shows statistics from Telzio API
+# A JS widget for Telzio API
+It shows calls statistics and info:
+- calls count per person and total
+- calls duration in hh:mm per person and total
+- the current active calls
 
 ## Usage
+
+Render a div element and set it to options object:
+
+	<div id="telzio"></div>
 	
-First add your sip users with short (sip user) and number attributes:
-	
-	var users = [
+	var options = {};
+	options.elementId = 'telzio';
+
+Add users with short (sip user) and number attributes:
+
+	options.users = [
 		{name: 'Anonymous', short: 'aa', number: '+1234567890', avatar: '<img src="avatar.png">'}
 	];
 
 Set a date period:
 
 	var date = new Date();
-  	var today = date.toISOString().split('T')[0];
-  	var yesterday = new Date(date.setDate(date.getDate()-1)).toISOString().split('T')[0];
-
 	
-### Fixed usage
+	options.dateFrom = new Date(date.setDate(date.getDate()-1)).toISOString().split('T')[0];
+  	options.dateTo = date.toISOString().split('T')[0];
 
-  	Telzio.Bootstrap.run({
-	    credentials: {key: 'change me', secret: 'change me'},
-	    elementId : 'telzioWidget', dateFrom: yesterday, dateTo: today,
-	    users: users
-  	});
+Set API credentials:
+	
+	options.credentials = { key: 'apiKey', secret: 'apiSecret' };
 
-### Autoupdated usage
+### Simple usage
 
-    bootstraper();
+  	Telzio.Bootstrap.run(options);
 
-    function bootstraper() {
-
-    	Telzio.Bootstrap.run({
-      		credentials: {key: 'change me', secret: 'change me'},
-        	elementId : 'widgetDay', dateFrom: yesterday, dateTo: today,
-        	users: users
-      	});
-
-      	setTimeout(bootstraper, 10000);
-    }
+### Autoupdated(every 10 sec) usage
+	
+	bootstraper();
+    
+	function bootstraper() {
+		Telzio.Bootstrap.run(options);
+	      	setTimeout(bootstraper, 10000);
+	}
