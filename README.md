@@ -1,5 +1,5 @@
 # A JS widget for Telzio API
-It shows calls statistics and info:
+It shows statistics and info:
 - calls count per person and total
 - calls duration in hh:mm per person and total
 - the current active calls
