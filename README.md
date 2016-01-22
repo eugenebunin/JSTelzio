@@ -31,11 +31,11 @@ Set API credentials:
 	
 	options.credentials = { key: 'apiKey', secret: 'apiSecret' };
 
-### Simple usage
+### Simple static usage
 
   	Telzio.Bootstrap.run(options);
 
-### Auto updating usage
+### Advanced auto refreshing usage
 	
 	bootstraper();
     
