@@ -35,7 +35,7 @@ Set API credentials:
 
   	Telzio.Bootstrap.run(options);
 
-### Autoupdated(every 10 sec) usage
+### Auto updating usage
 	
 	bootstraper();
     
